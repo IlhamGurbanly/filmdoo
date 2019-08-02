@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FILMDOO</title>
+	<link rel="stylesheet" type="text/css" href="public/css/fonts/font_awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="public/js/jquery.min.js"></script>
+	<style type="text/css">
+
+		/* displays */
+		.none {display: none}
+		.block {display: block}
+		.inline {display: inline}
+		.inline-block {display: inline-block}
+		.display-inherit {display: inherit}
+		.display-initial {display: initial}
+		.flex {display: flex}
+
+
+
+		/* visibility */
+		.vis-hidden {visibility: hidden}
+		.vis-visible {visibility: visible}
+
+
+
+		/* flex */
+		.row {display: flex; flex-direction: row}
+		.column {display: flex; flex-direction: column}
+		.flex-wrap {flex-wrap: wrap}
+		.flex-nowrap {flex-wrap: nowrap}
+		.flex-jc-center {justify-content: center}
+		.flex-jc-start {justify-content: flex-start}
+		.flex-jc-end {justify-content: flex-end}
+		.flex-jc-spc-between {justify-content: space-between}
+		.flex-jc-spc-around {justify-content: space-around}
+		.flex-ai-center {align-items: center}
+		.flex-ai-start {align-items: flex-start} 
+		.flex-ai-end {align-items: flex-end}
+
+
+
+
+		/* positions */
+		.static {position: static!important}
+		.relative {position: relative !important}
+		.absolute {position: absolute!important}
+		.fixed {position: fixed!important}
+		.sticky {position: sticky !important}
+
+
+
+
+		/* floats */
+		.right {float: right}
+		.left {float: left}
+
+ 		/* translate */
+ 		.t {transform: translateX(-100%);}
+
+		/* margins */
+		.not-margin {margin: 0 !important}
+		.not-margin-top {margin-top: 0 !important}
+		.not-margin-right {margin-right: 0 !important}
+		.not-margin-bottom {margin-bottom: 0 !important}
+		.not-margin-left {margin-left: 0 !important}
+		.auto-margin {margin: auto}
+		.auto-margin-v {margin-right: auto; margin-left: auto}
+		.auto-margin-h {margin-top: auto; margin-bottom: auto}
+		.smaller-margin {margin: 7.5px}
+		.sm-margin {margin: 15px}
+		.md-margin {margin: 25px}
+		.big-margin {margin: 50px}
+		.bigger-margin {margin: 100px}
+		.smaller-margin-top {margin-top: 7.5px}
+		.smaller-margin-right {margin-right: 7.5px !important}
+		.smaller-margin-bottom {margin-bottom: 7.5px}
+		.smaller-margin-left {margin-left: 7.5px}
+		.sm-margin-top {margin-top: 15px}
+		.sm-margin-right {margin-right: 15px}
+		.sm-margin-bottom {margin-bottom: 15px}
+		.sm-margin-left {margin-left: 15px}
+		.md-margin-top {margin-top: 25px}
+		.md-margin-right {margin-right: 25px}
+		.md-margin-bottom {margin-bottom: 25px}
+		.md-margin-left {margin-left: 25px}
+		.big-margin-top {margin-top: 50px}
+		.big-margin-right {margin-right: 50px}
+		.big-margin-bottom {margin-bottom: 50px}
+		.big-margin-left {margin-left: 50px !important}
+		.bigger-margin-top {margin-top: 100px}
+		.bigger-margin-right {margin-right: 100px}
+		.bigger-margin-bottom {margin-bottom: 100px}
+		.bigger-margin-left {margin-left: 100px}
+		.biggest-margin-top {margin-top: 200px}
+
+
+
+
+		/* paddings */
+		.not-padding {padding: 0 !important}
+		.not-padding-top {padding-top: 0 !important}
+		.not-padding-right {padding-right: 0 !important}
+		.not-padding-bottom {padding-bottom: 0 !important}
+		.not-padding-left {padding-left: 0 !important}
+		.smaller-padding {padding: 7.5px !important}
+		.sm-padding {padding: 15px !important}
+		.md-padding {padding: 25px !important}
+		.big-padding {padding: 50px !important}
+		.bigger-padding {padding: 100px !important}
+		.sm-padding-v { padding-right: 15px; padding-left: 15px}
+		.smaller-padding-top {padding-top: 7.5px !important}
+		.smaller-padding-right {padding-right: 7.5px !important}
+		.smaller-padding-bottom {padding-bottom: 7.5px !important}
+		.smaller-padding-left {padding-left: 7.5px !important}
+		.sm-padding-top {padding-top: 15px !important}
+		.sm-padding-right {padding-right: 15px !important}
+		.sm-padding-bottom {padding-bottom: 15px !important}
+		.sm-padding-left {padding-left: 15px !important}
+		.md-padding-top {padding-top: 25px !important}
+		.md-padding-right {padding-right: 25px !important}
+		.md-padding-bottom {padding-bottom: 25px !important}
+		.md-padding-left {padding-left: 25px !important}
+		.big-padding-top {padding-top: 50px !important}
+		.big-padding-right {padding-right: 50px !important}
+		.big-padding-bottom {padding-bottom: 50px}
+		.big-padding-left {padding-left: 50px !important}
+		.bigger-padding-top {padding-top: 100px !important}
+		.bigger-padding-right {padding-right: 100px !important}
+		.bigger-padding-bottom {padding-bottom: 100px !important}
+		.bigger-padding-left {padding-left: 100px !important}
+
+
+
+
+		/* top, right, bottom, left */
+		.not-top {top: 0 !important}
+		.not-right {right: 0 !important}
+		.not-bottom {bottom: 0 !important}
+		.not-left {left: 0 !important}
+		.smaller-top {top: 7.5px}
+		.smaller-right {right: 7.5px}
+		.smaller-bottom {bottom: 7.5px}
+		.smaller-left {left: 7.5px}
+		.sm-top {top: 15px}
+		.sm-right {right: 15px}
+		.sm-bottom {bottom: 15px}
+		.sm-left {left: 15px}
+		.md-top {top: 25px}
+		.md-right {right: 25px}
+		.md-bottom {bottom: 25px}
+		.md-left {left: 25px}
+		.big-top {top: 50px}
+		.big-right {right: 50px}
+		.big-bottom {bottom: 50px}
+		.big-left {left: 50px}
+		.bigger-top {top: 100px}
+		.bigger-right {right: 100px}
+		.bigger-bottom {bottom: 100px}
+		.bigger-left {left: 100px}
+		.auto-top-bottom {top: auto !important; bottom: auto !important}
+		.auto-right-left {top: right !important; bottom: left !important}
+
+
+
+
+		/* fonts */
+		.smaller-font {font-size: 7.5px}
+		.sm-font {font-size: 15px}
+		.md-font {font-size: 25px}
+		.big-font {font-size: 50px}
+		.bigger-font {font-size: 100px}
+
+		.normal-font {font-weight: normal}
+		.bold-font {font-weight: bold}
+
+
+
+
+		/* text */
+		.lower-text {text-transform: lowercase}
+		.upper-text {text-transform: uppercase}
+		.capitalize-text {text-transform: capitalize}
+
+		.smaller-indent {text-indent: 5px;}
+		.sm-indent {text-indent: 10px;}
+		.md-indent {text-indent: 15px;}
+		.big-indent {text-indent: 20px;}
+		.bigger-indent {text-indent: 25px;}
+
+		.border-box {box-sizing: border-box;}
+		.not-decoration {text-decoration: none;}
+		.text-center {text-align: center}
+
+
+
+
+		/* buttons */
+		.btn-list-con-md {display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center}
+		.btn-list-con-md div {display: flex; flex-direction: column;align-items: center}
+		.btn-list-con-md a, .btn-list-con-md button {text-decoration: none; margin-bottom: 0px; font-size: 20px}
+		.btn-list-con-md div a:not(:first-child),
+		.btn-list-con-md div button:not(:first-child) {margin-top: 15px}
+
+		.awesome-btn {background: none; border: none}
+		.awesome-white-btn {background: none; border: none; color: white; text-decoration: none;}
+		.awesome-white-btn:enabled:hover {color: grey}
+		.awesome-white-btn:focus {outline: 0}
+		.white-btn-longer {width: 630px; padding: 10px; background-color: white; color: black; border-top: none; border-right: 1px solid lightgrey; border-left: 1px solid lightgrey; border-bottom: 3px solid transparent; text-align: left; cursor: pointer;}
+		.white-btn-longer i {float: right;}
+		.white-btn-longer:hover {border-bottom: 3px solid black;}
+		.white-btn-longer:focus {outline: 0}
+
+		.white-btn {background-color: white; color: black; text-align: left; width: 200px; padding: 8px;}
+		.white-btn:hover {background-color: black; color: white;}
+		.white-btn:focus {outline: 0}
+
+		.darkred-btn {padding: 7px 0px; background-color: #a91717; color: white; /*border-right: 1px solid lightgrey; border-left: 1px solid lightgrey; border-top: 7px solid transparent;*/ border-bottom: 3px solid transparent;}
+		.darkred-btn span {display: block; padding: 0 10px; border-right: 1px solid rgba(65,64,64, 0.3);}
+		.darkred-btn:hover {border-bottom: 3px solid lightgrey;}
+		.darkred-btn:focus {outline: 0}
+
+		.black-link {color: black; text-decoration: none;}
+		/*.black-link:link {color: black}*/
+		/*.black-link:visited {color: yellow}*/
+		.black-link:hover {color: green}
+		.black-link:active {color: lightblue}
+
+		.awesome-orange-btn {color: #fd6d50}
+		.awesome-orange-btn:hover {color: #12bbc3}
+		.awesome-orange-btn:focus {outline: 0}
+				.awesome-blue-btn {color: #12bbc3; background: none; border: none;}
+		.awesome-blue-btn:enabled:hover {color: #fd6d50}
+		.awesome-blue-btn:focus {outline: 0}
+		.blue-btn {background-color: #12bbc3; border-color: transparent; ; color: white; font-weight: normal; border-radius: 5px; padding: 10px;}
+		.blue-btn:focus {outline: 0}
+		.red-btn {background-color: #f55f4b; border-color: transparent; ; color: white; font-weight: normal; border-radius: 5px; padding: 10px; text-decoration: none;}
+		.red-btn:hover {background-color: #12bbc3}
+		.red-btn:focus {outline: 0}	
+		.blue-btn-list-con {background-color: #12bbc3;  width: 200px; height: 270px; border-radius: 5px; padding: 15px 50px}
+		.grey-btn-when-hover-blue {display: block; position: relative; width: 180px; text-decoration: none; padding: 10px; background-color: #323542; border-color: transparent; border-radius: 5px; color: white; text-align: center}
+		.grey-btn-when-hover-blue i {color: #12bbc3; position: absolute; left: 10px;}
+		.grey-btn-when-hover-blue:hover {background-color: #12bbc3; color: white !important}
+		.grey-btn-when-hover-blue:hover i {color: white;}
+
+		.grey-btn-when-hover-purple {display: block; position: relative;  width: 180px; text-decoration: none; padding: 10px; background-color: #323542; border-color: transparent; border-radius: 5px; color: white; text-align: center}
+		.grey-btn-when-hover-purple i {color: #dc6085; position: absolute; left: 10px;}
+		.grey-btn-when-hover-purple:hover {background-color: #dc6085; color: white}
+		.grey-btn-when-hover-purple:hover i {color: white;}
+
+		.grey-btn-when-hover-pink {display: block; position: relative;  width: 180px; text-decoration: none; padding: 10px; background-color: #323542; border-color: transparent; border-radius: 5px; color: white; text-align: center}
+		.grey-btn-when-hover-pink i {color: #b447f3; position: absolute; left: 10px;}
+		.grey-btn-when-hover-pink:hover {background-color: #b447f3; color: white}
+
+		.grey-btn-when-hover-pink:hover i {color: white;}
+
+
+
+		/* dimensions */
+		.full-width {width: 100%;}
+		.full-height {height: 100%}
+		.middle-length {width: 220px}
+		.sm-length {width: 120px}
+		.full-width-with-px {width: 1000px; margin-left: auto; margin-right: auto;}
+		.min-width-1007px {min-width: 1007px;}
+		.sm-height {height: 100px !important}
+
+
+
+
+		/* menus */
+		.row-menu {display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; list-style: none;}
+		.row-menu a {text-decoration: none;}
+		.row-menu > li:first-child {margin-left: 0 !important}
+		.row-menu > li:last-child {margin-right: 0 !important}
+		.row-menu > li {margin-left: 15px; padding: 0;}
+
+
+
+
+
+		/* list */	
+		.list-style-type-outside {list-style-type: outside}
+		.list-style-type-inside {list-style-type: inside}
+		.list-style-none {list-style: none}
+		.first-in-column {margin-top: 0 !important}
+		.last-in-column {margin-bottom: 0 !important}
+		.first {margin-left: 0}
+		.last {margin-right: 0}
+
+		.list-without-padding li {padding: 0}
+		.list-without-margin li {margin: 0}
+
+
+
+
+
+
+		/* forms */
+		.search-by-name {display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; width: 230px;}
+		.search-by-name input[type=text] {width: 90%; font-size: 15px; box-sizing: border-box;}
+
+		.search-by-name-lg {display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; width: 300px;}
+		.search-by-name-lg input[type=text] {width: 90%; font-size: 15px; box-sizing: border-box;}
+
+
+
+		/* inputs */
+		.grey-input {height: 30px; background-color: lightgrey; color: black; font-family: FontAwesome; border: none;} 
+		.grey-input:focus {outline: 0}
+		.longest-white-text-input {background-color: white; width: 800px; padding: 10px; color: grey; border-color: transparent; border-radius: 5px;}
+		.longest-white-text-input:focus {outline: 0}
+
+		/* tables */
+
+
+
+
+		/* colors */
+		.white {color: white}
+		.grey {color: grey}
+		.blue {color: #12bbc3}
+		.light-grey {color: lightgrey}
+		.lightgrey {color: lightgrey}
+		.dark-grey {color: #323542}
+		.blue {color: #12bbc3}
+		.purple {color: #dc6085}
+		.pink {color: #b447f3} 
+
+
+		/* background */
+		.bg-none {background: none !important}
+		.bg-transparent {background-color: transparent}
+		.bg-img-repeat {background-repeat: repeat}
+		.bg-img-repeat-y {background-repeat: repeat-y}
+		.bg-img-repeat-x {background-repeat: repeat-x}
+		.bg-img-not-repeat {background-repeat: no-repeat}
+		.bg-img-cover {background-size: cover}
+		.bg-img-contain {background-size: contain}
+		.bg-clip-border-box {background-clip: border-box}
+		.bg-clip-padding-box {background-clip: padding-box}
+		.bg-clip-content-box {background-clip: content-box}
+		.bg-img-origin-border-box {background-origin: border-box}
+		.bg-img-origin-padding-box {background-origin: padding-box}
+		.bg-img-origin-content-box {background-origin: content-box}
+		.bg-pos-top {background-position: top}
+		.bg-pos-right {background-position: right}
+		.bg-pos-bottom {background-position: bottom}
+		.bg-pos-left {background-position: left}
+
+
+
+		/* background colors */	
+		.dark-grey-bg {background-color: #323542}
+		.blue-bg {background-color: #12bbc3}
+		.black-bg {background-color: black}
+		.lightgrey-bg {background-color: lightgrey}
+		.red-bg {background-color: #bb1919}
+		.darkred-bg {background-color: #a91717}
+		.grey-bg-with-opacity {background-color: rgba(50,53,66, 0.8)}
+		.white-bg {background-color: white}
+
+
+
+		/* layers */
+		.second-layer {z-index: 2;}
+
+
+
+		/* borders */
+		.not-border {border: none !important}
+		.not-border-right {border-right: none !important}
+		.not-border-left {border-left: none !important}
+		.border-top {border-top: 1px solid}
+		.border-right {border-right: 1px solid}
+		.border-bottom {border-bottom: 1px solid}
+		.border-left {border-left: 1px solid}
+		.md-border-top {border-top: 4px solid}
+		.md-border-right {border-right: 4px solid}
+		.md-border-bottom {border-bottom: 4px solid}	
+		.md-border-left {border-left: 4px solid}
+
+		.md-border-top-transparent {border-top: 4px solid transparent}
+
+
+
+
+
+		/* border colors */
+		.blue-border {border-color: #12bbc3}
+		.grey-border {border-color: lightgrey}
+
+
+
+
+		/* boxes */
+		.aside-posts {width: 300px; display: flex; flex-direction: column; flex-wrap: nowrap; float: right; margin-right: 15px;}
+		.aside-posts h2 {margin-left: 25px; margin-bottom: 0;}
+		.aside-posts div {padding: 15px 25px;}
+		.aside-posts img {width: 100%; height: 150px;}
+		.aside-posts a:first-child:hover + a {color: green;}
+		.aside-posts a:first-child:active + a {color: lightblue;}
+		.aside-posts a {text-decoration: none; margin-top: 10px; font-size: 20px; font-weight: bold;}
+
+		.row-post {display: flex; flex-direction: row; flex-wrap: nowrap;  overflow: hidden;}
+		.row-post > div:not(:first-child) {margin-left: 15px;}
+		.column-post {display: flex; flex-direction: column; flex-wrap: nowrap;  overflow: hidden;}
+		.column-post > div:not(:first-child), .column-post > a:not(:first-child) {margin-top: 15px;}
+		.middle-post-box {width: 200px}
+
+		/* images */
+		.post-img-big {width: 350px; height: 200px;}
+		.md-post-img {width: 200px; height: 300px}
+		.post-img-sm {width: 200px; height: 100px;}
+		.sm-img-length {width: 110px;}
+
+
+
+
+		/* posts */
+		.posts-con {display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; align-items: center; padding: 0 50px 50px 50px}
+		.posts-con a {text-decoration: none}
+		.posts-con .post {margin-top: 50px; margin-right: 100px}
+		.posts-con .last {margin-top: 50px; margin-right: 0 !important}
+
+
+
+		/* containers */
+		.longest-con {width: 900px}
+
+
+
+		/* decoration */
+		.none-decoration {text-decoration: none}
+
+
+
+		/* theese only belong to page */
+		body {background: linear-gradient(rgba(50,53,66, 0.4), rgba(50,53,66, 0.4)), url("public/css/img/bg_01.jpg") fixed center; 
+		background-size: cover;}
+		#underMenu {border-top: 1px solid lightgrey; border-bottom: 1px solid lightgrey;}
+		#postContainer {width: 585px;}
+		#siteLogo {width: 120px; height: 80px;}
+		#postsContainer > div:first-child {border-radius: 15px 15px 0 0}
+		#postsContainer > div:first-child a:hover {border-bottom: 3px solid #12bbc3; color: white !important; padding-bottom: 10px;}
+
+
+		@media screen and (min-width: 1007px) {
+		  #mainMenu {
+		    width: 1000px; margin-right: auto; margin-left: auto;
+		  }
+		}
+		
+	</style>
+</head>
+
+<header class="full-width fixed second-layer not-top">
+
+	<!-- menu -->
+	<div class="full-width dark-grey-bg">
+
+		<div class="row flex-ai-center flex-jc-spc-between sm-height sm-padding-v border-box" id="mainMenu">
+
+			<a href="">
+				<img src="public/css/img/site_logo.png" id="siteLogo">
+			</a>
+
+			<ul class="row-menu">
+				<li>
+					<a href="" class="awesome-orange-btn">
+						<i class="fa fa-search fa-2x" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<a href="" class="awesome-orange-btn">
+						<i class="fa fa-user-o fa-2x" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li> 
+					<a href="" class="awesome-orange-btn">
+						<i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>
+					</a>
+				</li>
+				<li>
+					<button class="awesome-white-btn">
+						<i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+					</button>
+				</li>
+			</ul>
+		</div>	
+	</div>
+	<!-- menu's end -->
+
+	<!-- 
+
+	1) fixed olsada ekranin diger terefine yayilsin amma yayilmir, belkede fixeddir deye.
+
+	2) Headere min-width teyin et. --> 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			alert($(window).width());
+		})
+	</script>
+
+
+	<!-- choose-language -->
+	<div class="md-margin-top full-width-with-px">
+		<button class="blue-btn js-choose-language-btn md-margin-left">
+			Choose Language<i class="fa fa-angle-down smaller-margin-left" aria-hidden="true"></i>
+		</button>
+
+		<div class="btn-list-con-md blue-btn-list-con smaller-margin-top js-choose-language-box md-margin-left md-border-top-transparent">
+			<div>
+				<a href="" class="awesome-white-btn">English</a>
+				<a href="" class="awesome-white-btn">Chinese</a>
+				<a href="" class="awesome-white-btn">French</a>
+				<a href="" class="awesome-white-btn">Greek</a>
+				<a href="" class="awesome-white-btn">Italian</a>
+				<a href="" class="awesome-white-btn">Russian</a>
+				<a href="" class="awesome-white-btn">Thai</a>
+			</div>
+			<div>	
+				<a href="" class="awesome-white-btn">Arabic</a>
+				<a href="" class="awesome-white-btn">Dutch</a>
+				<a href="" class="awesome-white-btn">Indonesian</a>
+				<a href="" class="awesome-white-btn">Portuguese</a>
+				<a href="" class="awesome-white-btn">Spanish</a>
+				<a href="" class="awesome-white-btn">Turkish</a>
+				<a href="" class="awesome-white-btn">Azerbaijan</a>
+			</div>	
+		</div>
+	</div>
+	<!-- end-of-choose-language -->	
+
+</header>
+
+<body class="not-margin">
+
+	<!-- as-featured-in -->
+	<div>
+
+		<center><h1 class="light-grey biggest-margin-top full-width-with-px">AS FEATURED IN:</h1></center>
+
+		<div class="row flex-jc-spc-between flex-ai-center" style=" width: 800px;  height: 100px; margin-left: auto; margin-right: auto; position: relative;">
+
+			<button class="awesome-white-btn js-featureds-list-prev-btn smaller-margin-right" disabled="">
+				<i class="fa fa-angle-left fa-3x" aria-hidden="true"></i>
+			</button>
+
+			<!-- onların görünməmə səbəbi bu divin eninin cox az olmasi və daşan elementlərin hidden olmasıdır. -->
+			<div class="js-featured relative" style="overflow: hidden; width: 590px; height: 100px">
+				<ul class="row-menu js-featureds-first-list not-padding absolute">
+					<li>
+						<a href="">
+							<img src="public/css/img/amazon.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/forbes-white.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/french-tech-ticket.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li  class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/guardian.png" class="sm-img-length">
+						</a>	
+					</li>
+				</ul>
+
+				<ul class="row-menu js-featureds-second-list not-padding relative not-top not-right absolute" style="left: 100%;">
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/amazon.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/forbes-white.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/french-tech-ticket.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li  class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/guardian.png" class="sm-img-length">
+						</a>	
+					</li>
+				</ul>
+
+				<ul class="row-menu js-featureds-third-list not-padding relative not-top not-right absolute" style="left: 100%;">
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/amazon.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/forbes-white.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/french-tech-ticket.png" class="sm-img-length">
+						</a>	
+					</li>
+					<li  class="big-margin-left">
+						<a href="">
+							<img src="public/css/img/guardian.png" class="sm-img-length">
+						</a>	
+					</li>
+				</ul>
+			</div>	
+
+			<button class="awesome-white-btn js-featureds-list-next-btn smaller-margin-left">
+				<i class="fa fa-angle-right fa-3x" aria-hidden="true"></i>
+			</button>
+
+		</div>
+
+	</div>
+	<!-- end-of-as-featured-in -->
+
+<div class="column nowrap flex-ai-center">
+
+	<a href="" class="red-btn">
+		<i class="fa fa-sign-in" aria-hidden="true"></i>
+		Sign Up & Get Started!
+	</a>
+
+	<form class="md-margin-top">
+		<input type="" name="" class="longest-white-text-input" placeholder="Search by film name, genre, interests...">
+	</form>
+
+</div>
+
+<!-- for media query -->
+
+<!-- <style type="text/css">
+@media screen and (min-width: 3000px) {
+  .js-first-genre-list li {
+    font-size: 6px !important;
+  }
+}
+</style>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		alert($(window).width())
+	})
+</script> -->
+
+<div class="longest-con auto-margin-v big-margin-top" id="postsContainer">
+
+	<!-- genres-container -->
+
+	<div class="grey-bg-with-opacity row flex-jc-spc-between flex-ai-center
+	 full-width sm-height sm-padding-v border-box relative" id="firstBox" style="bottom: 0;  margin: 0; position: relative;">
+
+		<button class="awesome-blue-btn js-genres-prev-btn" disabled="">
+			<i class="fa fa-arrow-circle-o-left fa-2x" aria-hidden="true"></i>
+		</button>
+
+		<div style="overflow: hidden; position: relative; height: 100px; width: 738.906px; padding: 0">
+
+			<ul class="row-menu not-padding js-first-genre-list absolute" style=" top: 41px; bottom: 41px; margin: 0;">
+				<li>
+					<a href="" class="awesome-white-btn">HORROR</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">ACTION</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">COMEDY</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">ADVENTURE</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">DRAMA</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">SCIENCE-FICTION</a>	
+				</li>
+			</ul>
+
+			<ul class="row-menu not-padding absolute js-second-genre-list" style="left: 100%; top: 41px; bottom: 41px; margin: 0;">
+				<li>
+					<a href="" class="awesome-white-btn">HORROR</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">ACTION</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">COMEDY</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">ADVENTURE</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">DRAMA</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">SCIENCE-FICTION</a>	
+				</li>
+			</ul>
+
+			<ul class="row-menu not-padding absolute js-third-genre-list" style="left: 100%; top: 41px; bottom: 41px; margin: 0;">
+				<li>
+					<a href="" class="awesome-white-btn">HORROR</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">ACTION</a>	
+				</li>
+				<li class="big-margin-left">
+					<a href="" class="awesome-white-btn">COMEDY</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">ADVENTURE</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">DRAMA</a>	
+				</li>
+				<li  class="big-margin-left">
+					<a href="" class="awesome-white-btn">SCIENCE-FICTION</a>	
+				</li>
+			</ul>
+		</div>
+
+		<button class="awesome-blue-btn js-genres-next-btn">
+			<i class="fa fa-arrow-circle-o-right  fa-2x" aria-hidden="true"></i>
+		</button>
+
+	</div>
+	<!-- end-of-genres-container -->
+
+			<script type="text/javascript">
+
+				// js-choose-language
+
+				$('.js-choose-language-box').hide();
+
+				$(".js-choose-language-btn").hover(function() {
+					$('.js-choose-language-box').stop().slideDown("slow", "linear" );
+				}, function() {
+					$('.js-choose-language-box').stop().slideUp( "slow", "linear" );
+				})
+
+				$(".js-choose-language-box").hover(function() {
+					$('.js-choose-language-box').stop().slideDown( "slow", "linear" );
+				}, function() {
+					$('.js-choose-language-box').stop().slideUp( "slow", "linear" );
+				})
+
+				// end-of-js-choose-language
+
+
+				// js-as-featured-in
+
+				var currentFeaturedList = 1;
+
+				// next-btn
+				$('.js-featureds-list-next-btn').on('click', function() {
+
+					if (currentFeaturedList == 1) {
+
+						currentFeaturedList += 1;
+
+						$(".js-featureds-first-list").animate({"left":"-100%"}, "slow");
+						$(".js-featureds-second-list").animate({"left":"0"}, "slow");
+
+						$('.js-featureds-list-prev-btn').removeAttr("disabled");							
+					
+						return currentFeaturedList;	
+					}
+
+					else if (currentFeaturedList == 2) {
+
+						currentFeaturedList += 1;
+
+						// İkinci elementin animasiya zamani tamamilə qutudan kənara çıxması üçün right: 100%, çünki ona bundan öncəki animasiyada left dəyəri verilmişdi.
+
+						$(this).attr("disabled", true);	
+
+						$(".js-featureds-second-list").animate({"left":"-100%"}, "slow");
+						$(".js-featureds-third-list").animate({"left":"0"}, "slow");						
+					
+						return currentFeaturedList;	
+					}
+
+				})
+
+				// prev-btn
+				$('.js-featureds-list-prev-btn').on('click', function() {
+
+
+					if (currentFeaturedList == 2) {
+
+						$(this).attr("disabled", true);
+
+						currentFeaturedList -= 1;
+
+						$(".js-featureds-second-list").animate({"left":"100%"}, "slow");
+						$(".js-featureds-first-list").animate({"left":"0"}, "slow");							
+					
+						return currentFeaturedList;	
+					}
+
+					else if (currentFeaturedList == 3) {
+
+						currentFeaturedList -= 1;	
+
+						$(".js-featureds-third-list").animate({"left":"100%"}, "slow");
+						$(".js-featureds-second-list").animate({"left":"0"}, "slow");
+
+						$('.js-featureds-list-next-btn').removeAttr("disabled");						
+					
+						return currentFeaturedList;	
+					}
+						 
+
+				})
+
+				// end-of-js-as-featured-in
+
+				// js-genre-lists
+
+				var currentGenreList = 1;
+
+				// next-btn
+				$('.js-genres-next-btn').on('click', function() {
+
+					if (currentGenreList == 1) {
+
+						currentGenreList += 1;
+
+						$(".js-first-genre-list").animate({"left":"-100%"}, "slow");
+						$(".js-second-genre-list").animate({"left":"0"}, "slow");
+
+						$('.js-genres-prev-btn').removeAttr("disabled");							
+					
+						return currentGenreList;	
+					}
+
+					else if (currentGenreList == 2) {
+
+						currentGenreList += 1;
+
+						$(this).attr("disabled", true);	
+
+						$(".js-second-genre-list").animate({"left":"-100%"}, "slow");
+						$(".js-third-genre-list").animate({"left":"0"}, "slow");						
+					
+						return currentGenreList;	
+					}
+
+				})
+
+				// prev-btn
+				$('.js-genres-prev-btn').on('click', function() {
+
+
+					if (currentGenreList == 2) {
+
+						$(this).attr("disabled", true);
+
+						currentGenreList -= 1;
+
+						$(".js-second-genre-list").animate({"left":"100%"}, "slow");
+						$(".js-first-genre-list").animate({"left":"0"}, "slow");							
+					
+						return currentGenreList;	
+					}
+
+					else if (currentGenreList == 3) {
+
+						currentGenreList -= 1;	
+
+						$(".js-third-genre-list").animate({"left":"100%"}, "slow");
+						$(".js-second-genre-list").animate({"left":"0"}, "slow");
+
+						$('.js-genres-next-btn').removeAttr("disabled");						
+					
+						return currentGenreList;	
+					}
+						 
+
+				})
+
+				// end-of-js-genre-lists
+
+				// to-get-information-with-alert
+
+				// $(document).ready( function() {
+				// 	alert($('.js-first-genre-list').height())
+				// })
+
+			</script>
+
+	<!-- 	Qeyd: Burada ul teqinin hündürlüyünü tamamilə valideyni hündürlükdə etmişdinki ul hündürlük baxımından mərkəzdə olsun, amma valideyn elementin marginləri 0 olsada ul teqinin margini valideyni valideyn üçün siblings olan bir elementə bitişməyə qoymurdu. -->
+
+	<!-- Qeyd: span üçün margin-left işləsədə margin-top işləmir. -->
+
+	<div class="white-bg sm-padding-v border-box sm-height relative" id="secondBox" style="top: 0px; margin: 0;">
+
+		<ul class="row flex-jc-space-between flex-ai-center list-style-none full-height not-margin">
+			<li class="big-padding-right">
+				<i class="fa fa-info-circle dark-grey smaller-margin-right" aria-hidden="true"></i>FILM GUIDE
+			</li>
+
+			<li class="sm-margin-right">
+				<a href="" class="grey-btn-when-hover-blue">
+					<i class="fa fa-play" aria-hidden="true"></i>RENT
+				</a>
+				<p class="not-margin-bottom text-center" id="test">Feature Movies & Shorts</p>
+			</li>
+
+			<li class="sm-margin-right">
+				<a href="" class="grey-btn-when-hover-pink">
+					<i class="fa fa-play" aria-hidden="true"></i>
+					WATCH FOR FREE
+				</a>
+				<p class="not-margin-bottom text-center" id="test">Free Films To Watch</p>
+			</li>
+
+			<li>
+				<a href="" class="grey-btn-when-hover-purple">
+					<i class="fa fa-play" aria-hidden="true"></i>TRAILER
+				</a>
+				<p class="not-margin-bottom text-center" id="test">Click DooVOTETo Request</p>
+			</li>
+		</ul>
+		
+	</div>
+
+	<!-- posts -->
+	<div class="posts-con white-bg">
+
+		<style type="text/css">
+			.post:hover .post-info {background: linear-gradient(rgba(50,53,66, 0.4), rgba(50,53,66, 0.4)), url("public/css/img/movies/movie_02.jpg")!important;}
+			.post:hover .post-info p {display: block}
+		</style>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom">
+			<a href="" class="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_01.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="post column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_02.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+		<div class="last column flex-jc-center flex-ai-center md-border-bottom blue-border md-padding-bottom post">
+			<a href="">
+				<div class="column md-post-img post-info not-margin" style="background-image: url(public/css/img/movies/movie_03.jpg)">
+					
+					<p class="white sm-margin-left none">Rejisor: John Doe
+					</p>
+					<p class="white sm-margin-left none">Dil : Dublyajlı</p>
+					<p class="white sm-margin-left none">İl : 2018</p>
+					<p class="white sm-margin-left none">İmdb Xalı : 5.8</p>
+
+				</div>
+			</a>	
+			<a href="" class="grey smaller-margin-top">MOVIE NAME</a>
+			<a href="" class="lightgrey smaller-margin-top">Movie information</a>
+		</div>
+
+
+	</div>
+	<!-- posts's end -->
+</div>
+
+</body>
+</html>
+
+
